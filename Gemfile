@@ -21,11 +21,18 @@ gem 'puma'
 gem 'devise'
 gem 'country_select'
 
+group :test do
+  gem 'minitest-rails'
+  gem 'factory_girl_rails'
+end
+
 group :development, :test do
   gem 'byebug'
+  gem 'pry-rails'
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'html2haml'
 end
