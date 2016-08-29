@@ -10,14 +10,13 @@
 
     - @products.each do |product|
       %tr
-        %td= product.name
+        %td= link_to product.name , product
         %td= product.price
-        %td= product.image
+        %td= image_tag product.image.thumb
         %td
-          = link_to 'Show', product
           = link_to 'Edit', edit_product_path(product)
           = link_to 'Destroy', product, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Product', new_product_path
+= link_to 'New Product', new_product_path, class: "btn btn-primary"
