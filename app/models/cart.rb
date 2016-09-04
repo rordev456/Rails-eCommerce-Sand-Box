@@ -27,17 +27,23 @@ class Cart
       }
     end
     {
-      "cart" => {
         "items" => hash
-      }
     }
   end
 
-  def self.builds_from_hash hash
-    items = hash["cart"]["items"].map do |item_data|
-      CartItem.new(item_data["product_id"], item_data["quantity"])
-    end
-    Cart.new(items)
+  def count
+    @items.length
   end
 
+  def self.builds_from_hash(hash)
+    items =
+      if hash["cart"] then
+        hash["cart"]["cart"]["items"].map do |item_data|
+        CartItem.new(item_data["product_id"], item_data["quantity"])
+        end
+      else
+        []
+      end
+    Cart.new(items)
+  end
 end

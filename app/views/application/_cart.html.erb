@@ -1,0 +1,9 @@
+<% if @cart %>
+  <p class="navbar-text navbar-right">
+      <% if @cart.empty? %>
+        Your cart is empty.
+      <% else %>
+        You have <%= "#{@cart.count}" %> items
+      <% end %>
+  </p>
+<% end %>
