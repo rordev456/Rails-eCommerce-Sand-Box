@@ -3,7 +3,7 @@
       <% if @cart.empty? %>
         Your cart is empty.
       <% else %>
-        You have <%= "#{@cart.count}" %> items
+      <%= link_to "You have #{@cart.count} items", cart_path %>  
       <% end %>
   </p>
 <% end %>

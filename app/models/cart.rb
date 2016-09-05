@@ -38,12 +38,16 @@ class Cart
   def self.builds_from_hash(hash)
     items =
       if hash["cart"] then
-        hash["cart"]["cart"]["items"].map do |item_data|
+        hash["cart"]["items"].map do |item_data|
         CartItem.new(item_data["product_id"], item_data["quantity"])
         end
       else
         []
       end
     Cart.new(items)
+  end
+
+  def total_price
+    @items.inject(0) {|sum, item| sum + item.total_price}
   end
 end

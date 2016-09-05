@@ -7,4 +7,8 @@ class CartsController < ApplicationController
     product = Product.find(params[:id])
     redirect_to :back, notice: "Added #{product.name} to the cart"
   end
+
+  def show
+    
+  end
 end

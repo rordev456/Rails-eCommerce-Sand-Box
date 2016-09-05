@@ -32,6 +32,8 @@ class CartTest < MiniTest::Test
     assert_equal(1, cart.items.first.product_id)
   end
 
+
+
   private
 
   def session_hash
