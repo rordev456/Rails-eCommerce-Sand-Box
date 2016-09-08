@@ -1,0 +1,14 @@
+resources:
+- name: Rails-eCommerce-Sand-Box
+  type: git
+  source:
+    uri: https://github.com/jamiebrown201/Rails-eCommerce-Sand-Box
+    branch: master
+
+jobs:
+- name: master
+  plan:
+  - get: Rails-eCommerce-Sand-Box
+    trigger: true
+  - task: tests
+    file: Rails-eCommerce-Sand-Box/build.yml
