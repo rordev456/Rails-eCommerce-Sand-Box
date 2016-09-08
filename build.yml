@@ -1,0 +1,13 @@
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: ruby
+    tag: latest
+
+inputs:
+- name: Rails-eCommerce-Sand-Box
+
+run:
+  path: ./Rails-eCommerce-Sand-Box/ci/test.sh
